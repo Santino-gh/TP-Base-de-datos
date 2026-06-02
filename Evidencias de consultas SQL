@@ -1,4 +1,4 @@
--- Todos los pedidos con mozo y mesa, JOINs entre múltiples tablas 
+-- Todos los pedidos con mozo y mesa, JOINs entre múltiples tablas  
 SELECT
     p.idPedido,
     m.numeroMesa,
