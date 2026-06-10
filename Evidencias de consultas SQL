@@ -1,3 +1,4 @@
+USE restaurante;
 -- Todos los pedidos con mozo y mesa, JOINs entre múltiples tablas  
 SELECT
     p.idPedido,
@@ -42,10 +43,9 @@ WHERE p.estado = 'Pendiente'
   -- Productos de una categoría con precio mayor a X
   SELECT nombre, idCategoria, precio
 FROM producto
-WHERE idCategoria = 'Bebida'
-  AND precio > 500
+WHERE idCategoria = 2 -- Bebida a elegir, editable
+  AND precio > 1 -- Ingresar precio, el campo se puede editar
 ORDER BY precio DESC;
-
 -- Pedidos de un mozo en un rango de fechas
 SELECT
     p.idPedido,
@@ -56,7 +56,7 @@ FROM pedido p
 JOIN mesa m  ON p.idMesa = m.idMesa
 JOIN mozo mz ON p.idMozo = mz.idMozo
 WHERE mz.nombre = 'Jorge López' -- Colocar nombre del mozo
-AND p.fecha BETWEEN '2026-06-01 22:00:22' AND '2026-06-01 22:00:22'-- Colocar rango de fechas;
+AND p.fecha BETWEEN '2026-06-01 22:00:22' AND '2026-07-01 22:00:22'-- Colocar rango de fechas;
 
 -- Productos ordenados por precio descendente, Ordenamientos con ORDER BY
 SELECT nombre, idCategoria, precio
