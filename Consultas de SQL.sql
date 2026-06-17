@@ -1,5 +1,5 @@
 USE restaurante;
--- Todos los pedidos con mozo y mesa, JOINs entre múltiples tablas  
+-- Todos los pedidos con mozo y mesa, JOINs entre múltiples tablas ordenado por idpedido
 SELECT
     p.idPedido,
     m.numeroMesa,
@@ -9,7 +9,7 @@ SELECT
 FROM pedido p
 JOIN mesa m  ON p.idMesa = m.idMesa
 JOIN mozo mz ON p.idMozo = mz.idMozo
-ORDER BY p.fecha DESC;
+ORDER BY p.idpedido asc;
 
 -- Detalle completo de cada pedido con productos
 SELECT
